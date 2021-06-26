@@ -1,0 +1,54 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: github_actions
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    strategy:
+      matrix:
+        python-version: [3.8]
+    env:
+      SECRET_KEY: "apenas_test_dart"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: psycopg2 prerequisites
+        run: sudo apt-get install python-dev libpq-dev
+      - name: Install dependencies for Testing
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt --no-cache-dir ; fi
+          if [ -f test-requirements.txt ]; then pip install -r test-requirements.txt --no-cache-dir ; fi
+
+      # Run Migrations
+      - name: Run migrations
+        run: python manage.py migrate
+
+      # Run Tests
+      - name: Test with pytest
+        run: pytest --cov=./ --cov-report=xml
+
+      # Deploy Heroku
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "challange_luizalabs"
+          heroku_email: "gustavoronconi95@gmail.com"
