@@ -1,17 +1,14 @@
-from rest_framework import status
+from rest_framework.filters import OrderingFilter
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewSet
 
 from api.models.customer_model import CustomerModel
-from api.serializers.customer_serializer import CustomerModelSerializer
+from api.serializers.customer_serializer import CustomerSerializer
 
 
-class CustomerView(APIView):
+# TODO paginar
+class CustomerView(ModelViewSet):
     permission_classes = (IsAuthenticated,)
-
-    def get(self, request):
-        customers = CustomerModel.objects.all()
-        serializer = CustomerModelSerializer(customers, many=True, context={"request": request})
-
-        return Response(status=status.HTTP_200_OK, data=serializer.data)
+    queryset = CustomerModel.objects.all()
+    serializer_class = CustomerSerializer
+    ilter_backends = [OrderingFilter]
