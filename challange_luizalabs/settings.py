@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "api",
+    "rest_framework_swagger",
 ]
 
 MIDDLEWARE = [
@@ -95,7 +96,7 @@ DATABASES = {
     }
 }
 
-if os.environ.get("GITHUB_WORKFLOW"):  # TODO adicionar o workflow do github
+if os.environ.get("GITHUB_WORKFLOW"):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",

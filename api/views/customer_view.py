@@ -7,5 +7,5 @@ from api.serializers.customer_serializer import CustomerSerializer
 
 class CustomerView(ModelViewSet):
     permission_classes = (IsAuthenticated,)
-    queryset = CustomerModel.objects.all()
+    queryset = CustomerModel.objects.all().order_by("id")
     serializer_class = CustomerSerializer

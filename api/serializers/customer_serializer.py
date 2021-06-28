@@ -9,12 +9,11 @@ from api.clients import ChallangeApi
 
 
 class CustomerSerializer(serializers.ModelSerializer):
-    products = ProductSerializer(many=True)
+    products = ProductSerializer(many=True, required=False, default=[])
 
     class Meta:
         model = CustomerModel
         fields = "__all__"
-        extra_kwargs = {"products": {"required": False}}
 
     def to_representation(self, instance):
         response = super(CustomerSerializer, self).to_representation(instance)
@@ -31,6 +30,8 @@ class CustomerSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         products = []
+        if not data.get("products"):
+            return data
         for p in data["products"]:
             challange_api = ChallangeApi(p["id"])
             product = challange_api.product_challange_api
@@ -56,7 +57,9 @@ class CustomerSerializer(serializers.ModelSerializer):
         return initial_validated_data
 
     def update(self, instance, validated_data):
-        products = validated_data.pop("products")
+        products = validated_data.get("products", [])
+        if products:
+            products = validated_data.pop("products")
 
         for k, v in validated_data.items():
             setattr(instance, k, v)

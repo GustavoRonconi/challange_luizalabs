@@ -1,0 +1,1 @@
+web: gunicorn challange_luizalabs.wsgi
