@@ -26,6 +26,8 @@
 * [Heroku](https://heroku.com)
 * [Postgrees](https://postgrees.org)
 
+## Features Extras
+- CI/CD automatizado utilizando Github Actions (Testes unitários/integração).
 
 ## Iniciando
 
