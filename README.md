@@ -11,7 +11,7 @@
     API developed for test purposes.
   </p>
   <p align="left">
-    Você pode acessar a documentação da versão em produção da API neste <a href="https://challangeluizalabs.herokuapp.com/api/docs/">LINK</a>. 👈
+    Você pode acessar a documentação da API neste <a href="https://challangeluizalabs.herokuapp.com/api/docs/">LINK</a>. 👈
   </p>
   <p align="left">
     Você pode obter a collection do postman neste <a href="https://www.getpostman.com/collections/679aefc1251a12f9c4f2">LINK</a>. 👈
@@ -31,7 +31,7 @@
 
 ## Iniciando
 
-Crie ambiente python 3.9 e instale as dependências, presume-se que você já tenha o Postgres instalado no seu ambiente.
+Crie um ambiente python-3.9 e instale as dependências, presume-se neste ponto que você já tenha o Postgres instalado no seu ambiente.
 
 ### Pré-requisitos
 * django==3.1.5
