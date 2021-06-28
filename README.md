@@ -13,6 +13,9 @@
   <p align="left">
     Você pode acessar a documentação da versão em produção da API neste <a href="url">LINK</a>.
   </p>
+  <p align="left">
+    Você pode obter a collection do postman neste <a href="https://www.getpostman.com/collections/679aefc1251a12f9c4f2">LINK</a>.
+  </p>
 </p>
 
 
@@ -59,4 +62,7 @@ Crie ambiente python 3.9 e instale as dependências, presume-se que você já te
    ```python
    python manage.py runserver 
    ```
+2. Credenciais para autenticação:
+   - username: gustavoronconi
+   - password: gustavo_luizalabs
 
