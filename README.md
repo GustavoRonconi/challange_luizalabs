@@ -11,10 +11,10 @@
     API developed for test purposes.
   </p>
   <p align="left">
-    Você pode acessar a documentação da versão em produção da API neste <a href="url">LINK</a>.
+    Você pode acessar a documentação da versão em produção da API neste <a href="url">LINK</a>. 👈
   </p>
   <p align="left">
-    Você pode obter a collection do postman neste <a href="https://www.getpostman.com/collections/679aefc1251a12f9c4f2">LINK</a>.
+    Você pode obter a collection do postman neste <a href="https://www.getpostman.com/collections/679aefc1251a12f9c4f2">LINK</a>. 👈
   </p>
 </p>
 
@@ -27,7 +27,7 @@
 * [Postgrees](https://postgrees.org)
 
 ## Features Extras
-- CI/CD automatizado utilizando Github Actions (Testes unitários/integração).
+- CI/CD completo utilizando Github Actions 💥.
 
 ## Iniciando
 
