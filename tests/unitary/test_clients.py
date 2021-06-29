@@ -1,6 +1,6 @@
 from uuid import UUID
 from unittest import mock
-from api.clients import ChallangeApi
+from api.clients import ChallengeApi
 import pytest
 
 
@@ -21,8 +21,8 @@ import pytest
     ],
 )
 @mock.patch("api.clients.requests.get")
-def test_product_challange_api(mock_requests_get, product_id, status_code, mocked_response, expected_result):
-    challange_api = ChallangeApi(product_id)
+def test_product_challenge_api(mock_requests_get, product_id, status_code, mocked_response, expected_result):
+    challenge_api = ChallengeApi(product_id)
 
     class MockResponse:
         def __init__(self, status_code, mocked_response):
@@ -33,4 +33,4 @@ def test_product_challange_api(mock_requests_get, product_id, status_code, mocke
             return self.mocked_response
 
     mock_requests_get.return_value = MockResponse(status_code, mocked_response)
-    assert challange_api.product_challange_api == expected_result
+    assert challenge_api.product_challenge_api == expected_result

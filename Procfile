@@ -1,1 +1,1 @@
-web: gunicorn challange_luizalabs.wsgi
+web: gunicorn challenge_luizalabs.wsgi

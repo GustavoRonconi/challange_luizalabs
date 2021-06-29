@@ -5,7 +5,7 @@ from rest_framework import serializers
 from api.models.customer_model import CustomerModel
 from api.models.product_model import ProductModel
 from api.serializers.product_serializer import ProductSerializer
-from api.clients import ChallangeApi
+from api.clients import ChallengeApi
 
 
 class CustomerSerializer(serializers.ModelSerializer):
@@ -18,8 +18,8 @@ class CustomerSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         response = super(CustomerSerializer, self).to_representation(instance)
         for p in response["products"]:
-            challange_api = ChallangeApi(p["id"])
-            p.update(challange_api.product_challange_api)
+            challenge_api = ChallengeApi(p["id"])
+            p.update(challenge_api.product_challenge_api)
         return response
 
     def remove_keys(self, data_dict):
@@ -33,8 +33,8 @@ class CustomerSerializer(serializers.ModelSerializer):
         if not data.get("products"):
             return data
         for p in data["products"]:
-            challange_api = ChallangeApi(p["id"])
-            product = challange_api.product_challange_api
+            challenge_api = ChallengeApi(p["id"])
+            product = challenge_api.product_challenge_api
             if not product:
                 raise serializers.ValidationError({"products": f"""Produto inexistente: {p["id"]}"""})
             if p["id"] in products:

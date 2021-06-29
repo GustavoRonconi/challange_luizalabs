@@ -1,5 +1,5 @@
 """
-ASGI config for challange_luizalabs project.
+ASGI config for challenge_luizalabs project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'challange_luizalabs.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'challenge_luizalabs.settings')
 
 application = get_asgi_application()

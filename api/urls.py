@@ -19,7 +19,7 @@ urlpatterns = [
     path(
         "openapi/",
         get_schema_view(
-            title="Challange Luiza Labs",
+            title="Challenge Luiza Labs",
             description="API for test purposes",
             version="1.0.0",
             public=True,

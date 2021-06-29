@@ -5,13 +5,13 @@
   </a>
 
 
-  <h3 align="center">LuizaLabs - Challange</h3>
+  <h3 align="center">LuizaLabs - Challenge</h3>
 
   <p align="center">
     API developed for test purposes.
   </p>
   <p align="left">
-    Você pode acessar a documentação da API neste <a href="https://challangeluizalabs.herokuapp.com/api/docs/">LINK</a>. 👈
+    Você pode acessar a documentação da API neste <a href="https://challengeluizalabs.herokuapp.com/api/docs/">LINK</a>. 👈
   </p>
   <p align="left">
     Você pode obter a collection do postman neste <a href="https://www.getpostman.com/collections/679aefc1251a12f9c4f2">LINK</a>. 👈
