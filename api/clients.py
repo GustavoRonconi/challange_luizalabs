@@ -1,12 +1,12 @@
 from uuid import uuid4
 import requests
 
-URL_CHALLANGE_API = "http://challenge-api.luizalabs.com/api/product/"
+URL_CHALLENGE_API = "http://challenge-api.luizalabs.com/api/product/"
 
 
 class ChallengeApi:
     def __init__(self, uuid: uuid4) -> None:
-        self.product_url = URL_CHALLANGE_API + str(uuid) + "/"
+        self.product_url = URL_CHALLENGE_API + str(uuid) + "/"
 
     @property
     def product_challenge_api(self) -> dict:
